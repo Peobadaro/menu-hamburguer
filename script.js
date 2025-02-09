@@ -5,7 +5,7 @@ $(document).ready(function() {
         $(this).toggleClass('active');
     });
 
-    // Configuração do Carrossel
+    // Configuração atualizada do Carrossel
     $('#carousel').slick({
         autoplay: true,
         autoplaySpeed: 3000,
@@ -14,7 +14,20 @@ $(document).ready(function() {
         infinite: true,
         speed: 500,
         fade: true,
-        cssEase: 'linear'
+        cssEase: 'linear',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            }
+        ],
+        lazyLoad: 'ondemand', // carrega as imagens conforme necessário
+        adaptiveHeight: true // ajusta altura automaticamente
     });
 
     // Configuração das máscaras
