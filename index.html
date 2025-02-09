@@ -3,128 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burger Menu</title>
+    <title>Restaurante</title>
     
     <!-- Slick Carousel CSS -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav class="nav-bar">
-            <div class="logo">
-                <h1>Burger Menu</h1>
-            </div>
-        </nav>
-    </header>
+    <!-- Menu Hamburguer -->
+    <nav class="nav-bar">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cardapio">Cardápio</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
 
-    <main>
-        <!-- Menu Section -->
-        <section class="menu-section">
-            <div class="container">
-                <h2>Special Burgers</h2>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <span class="item-name">Cheeseburger</span>
-                        <div class="price">
-                            <span>SNGL $5</span>
-                            <span>DBL $10</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name">The Hurt Burger</span>
-                        <div class="price">
-                            <span>SNGL $6</span>
-                            <span>DBL $11</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name">Bacon Cheeseburger</span>
-                        <div class="price">
-                            <span>SNGL $7</span>
-                            <span>DBL $12</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name">Classic Cheeseburger</span>
-                        <div class="price">
-                            <span>SNGL $5</span>
-                            <span>DBL $10</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name">Salmon Burger</span>
-                        <div class="price">
-                            <span>SNGL $7</span>
-                            <span>DBL $12</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name">Seafood Burger</span>
-                        <div class="price">
-                            <span>SNGL $6</span>
-                            <span>DBL $11</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name">BBQ Burger</span>
-                        <div class="price">
-                            <span>SNGL $6</span>
-                            <span>DBL $11</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name">Vegetarian Burger</span>
-                        <div class="price">
-                            <span>SNGL $7</span>
-                            <span>DBL $12</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- Carrossel -->
+    <div class="carousel-container">
+        <div id="carousel">
+            <div><img src="images/prato1.jpg" alt="Prato 1"></div>
+            <div><img src="images/prato2.jpg" alt="Prato 2"></div>
+            <div><img src="images/prato3.jpg" alt="Prato 3"></div>
+        </div>
+    </div>
 
-                <h2>Fries</h2>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <span class="item-name">Kennebec Fries</span>
-                        <div class="price">
-                            <span>$5</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name">Cheese Fries</span>
-                        <div class="price">
-                            <span>$6</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Carrossel Section -->
-        <section class="carousel-section">
-            <div class="carousel-container">
-                <div id="carousel">
-                    <div class="carousel-item">
-                        <img src="imagem/imagens-1.jpg" alt="Hamburguer 1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagem/imagens-2.jpg" alt="Hamburguer 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imagem/imagens-3.jpg" alt="Hamburguer 3">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Formulário de Contato -->
+    <form id="contactForm">
+        <input type="text" id="nome" name="nome" placeholder="Nome">
+        <input type="tel" id="telefone" name="telefone" placeholder="Telefone">
+        <input type="email" id="email" name="email" placeholder="Email">
+        <button type="submit">Enviar</button>
+    </form>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

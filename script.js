@@ -1,19 +1,8 @@
 $(document).ready(function() {
-    // Configuração do Menu Hamburguer com animação suave
+    // Configuração do Menu Hamburguer
     $('.hamburger').click(function() {
+        $('.menu').toggleClass('active');
         $(this).toggleClass('active');
-        $('.menu').slideToggle(300);
-    });
-
-    // Adicionar classe active ao link do menu quando clicado
-    $('.menu a').click(function() {
-        $('.menu a').removeClass('active');
-        $(this).addClass('active');
-        
-        if ($(window).width() <= 768) {
-            $('.menu').slideUp(300);
-            $('.hamburger').removeClass('active');
-        }
     });
 
     // Configuração do Carrossel
@@ -24,27 +13,15 @@ $(document).ready(function() {
         arrows: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false
-                }
-            }
-        ]
+        fade: true,
+        cssEase: 'linear'
     });
 
-    // Máscara para telefone com feedback visual
-    $('#telefone').mask('(00) 00000-0000', {
-        placeholder: "(__) _____-____"
-    });
+    // Máscara para o campo de telefone
+    $('#telefone').mask('(00) 00000-0000');
 
-    // Validação do formulário com feedback em tempo real
+    // Validação do formulário
     $('#contactForm').validate({
-        errorElement: 'span',
-        errorClass: 'error-message',
         rules: {
             nome: {
                 required: true,
@@ -70,28 +47,6 @@ $(document).ready(function() {
             telefone: {
                 required: "Por favor, insira seu telefone"
             }
-        },
-        highlight: function(element) {
-            $(element).addClass('error');
-        },
-        unhighlight: function(element) {
-            $(element).removeClass('error');
-        },
-        submitHandler: function(form) {
-            // Aqui você pode adicionar o código para enviar o formulário
-            alert('Formulário enviado com sucesso!');
-            form.reset();
-        }
-    });
-
-    // Scroll suave para as âncoras
-    $('a[href^="#"]').click(function(e) {
-        e.preventDefault();
-        var target = $(this.hash);
-        if (target.length) {
-            $('html, body').animate({
-                scrollTop: target.offset().top - 80
-            }, 800);
         }
     });
 }); 

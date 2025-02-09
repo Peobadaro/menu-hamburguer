@@ -1,230 +1,90 @@
-/* Variáveis de cores */
-:root {
-    --primary-color: #ffd700;
-    --text-color: #333;
-    --background-color: #1a1a1a;
-    --white: #ffffff;
-    --gray-light: #f5f5f5;
-}
-
-/* Reset e estilos gerais */
+/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--background-color);
-    color: var(--white);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Header */
-header {
-    background-color: var(--background-color);
-    padding: 1rem 0;
-    border-bottom: 2px solid var(--primary-color);
-}
-
+/* Estilos do Menu Hamburguer */
 .nav-bar {
+    padding: 1rem;
+    background-color: #333;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.menu {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 2rem;
 }
 
-.logo h1 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    text-transform: uppercase;
-}
-
-/* Menu Section */
-.menu-section {
-    padding: 2rem 0;
-}
-
-.menu-section h2 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.menu-grid {
-    display: grid;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px dotted var(--primary-color);
-}
-
-.item-name {
-    font-size: 1.2rem;
-    color: var(--white);
-}
-
-.price {
-    display: flex;
-    gap: 1rem;
-    color: var(--primary-color);
+.menu a {
+    color: white;
+    text-decoration: none;
 }
 
 /* Carrossel */
-.carousel-section {
-    padding: 2rem 0;
-    background-color: var(--background-color);
-}
-
 .carousel-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto;
 }
 
-.carousel-item img {
+#carousel img {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
+    height: auto;
 }
 
-/* Slick Carousel Controls */
-.slick-prev,
-.slick-next {
-    z-index: 1;
-    width: 40px;
-    height: 40px;
+/* Formulário */
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem;
 }
 
-.slick-prev {
-    left: -50px;
-}
-
-.slick-next {
-    right: -50px;
-}
-
-.slick-dots {
-    bottom: -40px;
-}
-
-.slick-dots li button:before {
-    color: var(--primary-color);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .carousel-item img {
-        height: 300px;
-    }
-
-    .slick-prev {
-        left: 10px;
-    }
-
-    .slick-next {
-        right: 10px;
-    }
-}
-
-/* Formulário de Contato */
-.contact-section {
-    padding: 5rem 0;
-    background-color: var(--gray-light);
-}
-
-.contact-section h2 {
-    text-align: center;
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-}
-
-.contact-section p {
-    text-align: center;
-    color: #666;
-    margin-bottom: 2rem;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    position: relative;
-    margin-bottom: 1.5rem;
-}
-
-.form-group i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
-}
-
-.form-group input {
+input {
     width: 100%;
-    padding: 12px 45px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus {
-    border-color: var(--primary-color);
-    outline: none;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--primary-color);
-    color: var(--white);
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #ff3333;
-}
+/* Media Query para Menu Responsivo */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
 
-button i {
-    margin-left: 8px;
-}
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #333;
+        width: 100%;
+        left: 0;
+        padding: 1rem;
+    }
 
-/* Footer */
-footer {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    padding: 1rem 0;
-    text-align: center;
+    .menu.active {
+        display: flex;
+    }
 } 
