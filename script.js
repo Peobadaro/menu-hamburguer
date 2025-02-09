@@ -16,19 +16,16 @@ $(document).ready(function() {
         }
     });
 
-    // Configuração do Carrossel com melhor performance
+    // Configuração do Carrossel
     $('#carousel').slick({
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
         dots: true,
         arrows: true,
         infinite: true,
-        speed: 800,
-        fade: true,
-        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
-        touchThreshold: 10,
-        pauseOnHover: true,
-        pauseOnFocus: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         responsive: [
             {
                 breakpoint: 768,
